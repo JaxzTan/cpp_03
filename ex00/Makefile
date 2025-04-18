@@ -6,7 +6,7 @@
 #    By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 12:35:05 by chtan             #+#    #+#              #
-#    Updated: 2025/02/20 13:11:47 by chtan            ###   ########.fr        #
+#    Updated: 2025/04/18 11:44:47 by chtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_DIR			=	./obj
 # makefile-rules  								  			#
 # ------------------------------------------------------------------#
 all				:	$(NAME)
-					@echo "\033[0;32mClapTrap is ready!\033[0m"
+					@echo "\033[0;32mClapTrap is ready!\033[0m\n"
 
 $(NAME)			:	$(SRC)
 	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(SRC)
@@ -33,9 +33,11 @@ clean			:
 
 fclean			:	clean
 	@rm -rf $(NAME)
+	@sleep 1
+	@clear
 
 
 re				:	fclean all
 
 run				: 
-	@reset && $(MAKE) -s re && $(NAME) && $(MAKE) -s fclean
+	@reset && $(MAKE) -s re && $(NAME)

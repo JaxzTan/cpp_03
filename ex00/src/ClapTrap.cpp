@@ -6,14 +6,18 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:18:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/02/20 13:19:09 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/18 11:54:40 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
+/**
+ * @brief Default constructor
+ * @param name Name of the ClapTrap
+ */
 ClapTrap::ClapTrap(void) {
-	std::cout << "ClapTrap default constructor called" << std::endl;
+	std::cout << GREEN_H <<"ClapTrap default constructor called" << RESET_H <<std::endl;
 	this->_name = "default";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -21,8 +25,12 @@ ClapTrap::ClapTrap(void) {
 	return ;
 }
 
+/**
+ * @brief parameterized constructor
+ * @param beside of name all set to default
+ */
 ClapTrap::ClapTrap(std::string name) {
-	std::cout << "ClapTrap set name constructor called" << std::endl;
+	std::cout << GREEN_H <<"ClapTrap set name constructor called" << RESET_H << std::endl;
 	this->_name = name;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -30,12 +38,24 @@ ClapTrap::ClapTrap(std::string name) {
 	return ;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& toCopy) {
+/**
+ * @brief Copy constructor
+ * @param toCopy ClapTrap object to copy
+ */
+ClapTrap::ClapTrap(const ClapTrap& toCopy)
+	: _name(toCopy._name), _hitPoints(toCopy._hitPoints), _energyPoints(toCopy._energyPoints), _attackDamage(toCopy._attackDamage) {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
-	*this = toCopy;
-	return ;
 }
 
+// ClapTrap::ClapTrap(const ClapTrap& toCopy) {
+// 	std::cout << "ClapTrap copy constructor called" << std::endl;
+// 	*this = toCopy;
+// 	return ;
+// }
+
+/**
+ * @brief Copy assignment operator
+ */
 ClapTrap& ClapTrap::operator=(const ClapTrap &toCopy) {
 	if (this == &toCopy)
 		return (*this);
@@ -46,8 +66,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &toCopy) {
 	return (*this);
 }
 
+// @brief Destructor
 ClapTrap::~ClapTrap(void) {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << RED_H <<"ClapTrap destructor called" << RESET_H <<std::endl;
 	return ;
 }
 

@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
@@ -13,6 +13,12 @@
 #pragma once
 
 #include <iostream>
+
+# define GREEN_H "\033[0;32m" //constructor called
+# define RESET_H "\033[0m"
+# define RED_H "\033[0;31m" //destructor called
+# define BLUE_H "\033[0;34m" // getrawbit
+# define YELLOW_H "\033[0;33m" //N/A
 
 class	ClapTrap {
 
