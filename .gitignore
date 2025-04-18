@@ -1,8 +1,10 @@
 *.txt
 *.out
 .vscode
-megaphone
 *.objs
+FragTrap
+ScavTrap
+Fragtrap
 # Compiled object files
 *.o
 *.obj
