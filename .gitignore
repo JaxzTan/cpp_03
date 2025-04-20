@@ -5,6 +5,8 @@
 FragTrap
 ScavTrap
 Fragtrap
+ClapTrap
+
 # Compiled object files
 *.o
 *.obj
