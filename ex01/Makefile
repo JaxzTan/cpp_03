@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+         #
+#    By: chtan <chtan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 12:35:05 by chtan             #+#    #+#              #
-#    Updated: 2025/04/18 12:08:35 by chtan            ###   ########.fr        #
+#    Updated: 2025/04/26 15:34:17 by chtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,4 +40,4 @@ fclean			:	clean
 re				:	fclean all
 
 run				: 
-	@reset && $(MAKE) -s re && $(NAME) && $(MAKE) -s fclean
+	@reset && $(MAKE) -s re && $(NAME)
