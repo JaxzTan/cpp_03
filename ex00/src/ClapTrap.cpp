@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:18:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/18 11:54:40 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/26 10:48:47 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * @param name Name of the ClapTrap
  */
 ClapTrap::ClapTrap(void) {
-	std::cout << GREEN_H <<"ClapTrap default constructor called" << RESET_H <<std::endl;
+	std::cout << GREEN_H << "ClapTrap default constructor called" << RESET_H <<std::endl;
 	this->_name = "default";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(void) {
  * @brief parameterized constructor
  * @param beside of name all set to default
  */
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap(string name) {
 	std::cout << GREEN_H <<"ClapTrap set name constructor called" << RESET_H << std::endl;
 	this->_name = name;
 	this->_hitPoints = 10;
@@ -72,13 +72,13 @@ ClapTrap::~ClapTrap(void) {
 	return ;
 }
 
-void	ClapTrap::attack(const std::string& target) {
+void	ClapTrap::attack(const string& target) {
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " is dead, it can't attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << ATTACK_H << " is dead, it can't attack" << RESET_H <<std::endl;
 	else if (this->_energyPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " can't attacks" << std::endl;
+		std::cout << "ClapTrap " << this->_name << ATTACK_H << " can't attacks" << RESET_H <<std::endl;
 	else {
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << std::flush;
+		std::cout << "ClapTrap " << this->_name << ATTACK_H <<" attacks " << RESET_H <<target << std::flush;
 		std::cout << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints--;
 	}
@@ -87,16 +87,16 @@ void	ClapTrap::attack(const std::string& target) {
 
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " is dead, it can't takes damages" << std::endl;
+		std::cout << "ClapTrap " << this->_name << TAKEDAMAGE << " is dead, it can't takes damages" << RESET_H <<std::endl;
 	else {
-		std::cout << "ClapTrap " << this->_name << " takes " << amount << " of damages" << std::endl;
+		std::cout << "ClapTrap " << this->_name << TAKEDAMAGE <<" takes " <<  RESET_H << amount << " of damages" << std::endl;
 		if (this->_hitPoints > amount) {
 			this->_hitPoints -= amount;
-			std::cout << "Now his life is " << this->_hitPoints << " points." << std::endl;
+			std::cout << "Now his life is " << this->_hitPoints << TAKEDAMAGE << " points." << RESET_H << std::endl;
 		}
 		else {
 			this->_hitPoints = 0;
-			std::cout << "ClapTrap " << this->_name << " is now dead" << std::endl;
+			std::cout << "ClapTrap " << this->_name << TAKEDAMAGE << " is now dead" << RESET_H << std::endl;
 		}
 	}
 	return ;
@@ -104,13 +104,13 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " is dead, it can't be repaired" << std::endl;
+		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " is dead, it can't be repaired" << RESET_H << std::endl;
 	else if (this->_energyPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " can't be repaired" << std::endl;
+		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " can't be repaired" << RESET_H << std::endl;
 	else {
-		std::cout << "ClapTrap " << this->_name << " repaired " << amount << " point of life" << std::endl;
+		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " repaired " << RESET_H <<amount << " point of life" << std::endl;
 		this->_hitPoints += amount;
-		std::cout << "Now his life is " << this->_hitPoints << " points." << std::endl;
+		std::cout << "Now his life is " << this->_hitPoints  << REPAIRED_H << " points." << RESET_H << std::endl;
 		this->_energyPoints--;
 	}
 	return ;

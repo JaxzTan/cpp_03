@@ -13,17 +13,21 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 
-# define GREEN_H "\033[0;32m" //constructor called
-# define RESET_H "\033[0m"
-# define RED_H "\033[0;31m" //destructor called
-# define BLUE_H "\033[0;34m" // getrawbit
-# define YELLOW_H "\033[0;33m" //N/A
+# define GREEN_H	"\033[0;32m" // constructor called
+# define RESET_H	"\033[0m"
+# define RED_H		"\033[0;31m" // destructor called
+# define TAKEDAMAGE	"\033[0;34m" // 
+# define REPAIRED_H	"\033[0;33m" //  
+# define ATTACK_H	"\033[0;95m" // purple
+
+typedef std::string string;
 
 class	ClapTrap {
 
 	private:
-		std::string		_name;
+		string			_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;
@@ -31,7 +35,7 @@ class	ClapTrap {
 	public:
 	// Constructors
 		ClapTrap(void);
-		ClapTrap(std::string name);
+		ClapTrap(string name);
 		ClapTrap(const ClapTrap &toCopy);
 
 	// Destructor
@@ -41,7 +45,7 @@ class	ClapTrap {
 		ClapTrap &operator = (const ClapTrap &toCopy);
 
 	// Public methods
-		void	attack(const std::string& target);
+		void	attack(const string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 };
