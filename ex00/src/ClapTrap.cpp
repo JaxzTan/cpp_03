@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:18:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/26 10:48:47 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/26 15:20:49 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ClapTrap::attack(const string& target) {
 	else if (this->_energyPoints == 0)
 		std::cout << "ClapTrap " << this->_name << ATTACK_H << " can't attacks" << RESET_H <<std::endl;
 	else {
-		std::cout << "ClapTrap " << this->_name << ATTACK_H <<" attacks " << RESET_H <<target << std::flush;
+		std::cout << "ClapTrap " << this->_name << ATTACK_H <<" attacks " << RESET_H << target << std::flush;
 		std::cout << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints--;
 	}
@@ -106,7 +106,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	if (this->_hitPoints == 0)
 		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " is dead, it can't be repaired" << RESET_H << std::endl;
 	else if (this->_energyPoints == 0)
-		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " can't be repaired" << RESET_H << std::endl;
+		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " can't be repaired because no energy points" << RESET_H << std::endl;
 	else {
 		std::cout << "ClapTrap " << this->_name << REPAIRED_H << " repaired " << RESET_H <<amount << " point of life" << std::endl;
 		this->_hitPoints += amount;

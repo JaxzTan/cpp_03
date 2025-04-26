@@ -28,9 +28,9 @@ class	ClapTrap {
 
 	private:
 		string			_name;
-		unsigned int	_hitPoints;
-		unsigned int	_energyPoints;
-		unsigned int	_attackDamage;
+		unsigned int	_hitPoints;		//life
+		unsigned int	_energyPoints;	//mana
+		unsigned int	_attackDamage;	//damage
 
 	public:
 	// Constructors

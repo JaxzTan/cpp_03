@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:12:47 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/26 11:05:23 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/26 15:24:09 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void) {
 	std::cout << "\n### TESTS ###" << std::endl;
 	a.attack("Mike Tyson");
 	std::cout << std::endl;
-	b.takeDamage(5);
+	b.takeDamage(0);
 	std::cout << std::endl;
 	b.beRepaired(7);
 	std::cout << std::endl;
@@ -38,7 +38,8 @@ int	main(void) {
 		b.attack("Jackie Chan");
 		std::cout << std::endl;
 	}
-	std::cout << "Program end!!" << std::endl;
+	std::cout << RED_H << "#####  Program end!!!  #####" << RESET_H << std::endl;
+	std::cout << std::endl;
 	return (0);
 }
 
