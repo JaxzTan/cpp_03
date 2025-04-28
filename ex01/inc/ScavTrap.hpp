@@ -6,38 +6,36 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:05:36 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/18 12:07:40 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/28 14:37:39 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #ifndef SCAVTRAP_H
 # define SCAVTRAP_H
-# include <iostream>
+
 # include "ClapTrap.hpp"
 
 class	ScavTrap : virtual public ClapTrap
 {
 
-public:
+	public:
 
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const & input);
-	ScavTrap & operator=(ScavTrap const & input);
-	~ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const & input);
+		ScavTrap & operator=(ScavTrap const & input);
+		~ScavTrap(void);
 
-	void	attack(const std::string & target);
-	void	guardGate(void);
+		void	attack(const std::string & target);
+		void	guardGate(void);
 
-private:
+	private:
+		void	status(void);
 
-	void	status(void);
-
-protected:
-
-	static unsigned int const _initHitPoints = 100;
-	static unsigned int const _initEnergyPoints = 50;
-	static unsigned int const _initAttackDamage = 20;
+	protected:
+		static unsigned int const _initHitPoints = 100;
+		static unsigned int const _initEnergyPoints = 50;
+		static unsigned int const _initAttackDamage = 20;
 
 };
 

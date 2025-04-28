@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 15:25:47 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/18 15:26:01 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/28 10:23:20 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_hitPoints = _initHitPoints;
 	this->_energyPoints = _initEnergyPoints;
 	this->_attackDamage = _initAttackDamage;
-	std::cout << "FragTrap " << COLOR_GREEN << name << COLOR_DEFAULT << " was set";
+	std::cout << "FragTrap " << GREEN_H << name << RESET_H << " was set";
 	status();
 	std::cout << std::endl;
 }
@@ -27,7 +27,7 @@ FragTrap::FragTrap(FragTrap const & input) : ClapTrap(input._name)
 	this->_hitPoints = input._hitPoints;
 	this->_energyPoints = input._energyPoints;
 	this->_attackDamage = input._attackDamage;
-	std::cout << "FragTrap " << COLOR_GREEN << input._name << COLOR_DEFAULT << " was copied and set";
+	std::cout << "FragTrap " << GREEN_H << input._name << RESET_H << " was copied and set";
 	status();
 	std::cout << std::endl;
 }
@@ -38,7 +38,7 @@ FragTrap & FragTrap::operator=(FragTrap const & input)
 	this->_hitPoints = input._hitPoints;
 	this->_energyPoints = input._energyPoints;
 	this->_attackDamage = input._attackDamage;
-	std::cout << "ScavTrap " << COLOR_GREEN << input._name << COLOR_DEFAULT << " was assigned and set";
+	std::cout << "ScavTrap " << GREEN_H << input._name << RESET_H << " was assigned and set";
 	status();
 	std::cout << std::endl;
 	return (*this);
@@ -46,12 +46,12 @@ FragTrap & FragTrap::operator=(FragTrap const & input)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap " << COLOR_RED << this->_name << COLOR_DEFAULT << " has been destroyed\n";
+	std::cout << "FragTrap " << RED_H << this->_name << RESET_H << " has been destroyed\n";
 }
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout	<< "FragTrap " << COLOR_MAGENTA << this->_name << COLOR_DEFAULT;
+	std::cout	<< "FragTrap " << PURPLE_H << this->_name << RESET_H;
 	status();
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 	{
@@ -70,7 +70,7 @@ void	FragTrap::highFivesGuys(void)
 
 void	FragTrap::status(void)
 {
-	std::cout	<< " =<[HP (" << COLOR_GREEN << this->_hitPoints << COLOR_DEFAULT << "/" << COLOR_GREEN << _initHitPoints << COLOR_DEFAULT
-				<< ") EP (" << COLOR_YELLOW << this->_energyPoints << COLOR_DEFAULT << "/" << COLOR_YELLOW << _initEnergyPoints << COLOR_DEFAULT
-				<< ") AD (" << COLOR_RED << this->_attackDamage << COLOR_DEFAULT << ")]>=";
+	std::cout	<< " =<[HP (" << GREEN_H << this->_hitPoints << RESET_H << "/" << GREEN_H << _initHitPoints << RESET_H
+				<< ") EP (" << YELLOW_H << this->_energyPoints << RESET_H << "/" << YELLOW_H << _initEnergyPoints << RESET_H
+				<< ") AD (" << RED_H << this->_attackDamage << RESET_H << ")]>=";
 }

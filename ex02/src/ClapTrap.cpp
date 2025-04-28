@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:23:08 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/18 10:59:37 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/28 10:21:18 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & input)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap " << COLOR_RED << this->_name << COLOR_DEFAULT << " has been destroyed\n";
+	std::cout << "ClapTrap " << RED_H << this->_name << RESET_H << " has been destroyed\n";
 }
 
 void	ClapTrap::attack(const std::string & target)
 {
-	std::cout	<< "ClapTrap " << COLOR_YELLOW << this->_name << COLOR_DEFAULT;
+	std::cout	<< "ClapTrap " << YELLOW_H << this->_name << RESET_H;
 	status();
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 	{
 		this->_energyPoints--;
-		std::cout	<< " attacks " << COLOR_RED << target << COLOR_DEFAULT
-					<< ", causing " << COLOR_RED << this->_attackDamage << COLOR_DEFAULT << " points of damage!\n";
+		std::cout	<< " attacks " << RED_H << target << RESET_H
+					<< ", causing " << RED_H << this->_attackDamage << RESET_H << " points of damage!\n";
 	}
 	else if (this->_energyPoints <= 0)
 	{
@@ -68,12 +68,12 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->_hitPoints = 0;
 	else
 		this->_hitPoints -= amount;
-	std::cout	<< "ClapTrap " << COLOR_RED << this->_name << COLOR_DEFAULT;
+	std::cout	<< "ClapTrap " << RED_H << this->_name << RESET_H;
 	status();
-	std::cout	<< " has taken " << COLOR_RED << amount << COLOR_DEFAULT << " points of damage!\n";
+	std::cout	<< " has taken " << RED_H << amount << RESET_H << " points of damage!\n";
 	if (this->_hitPoints <= 0)
 	{
-		std::cout	<< "ClapTrap " << COLOR_RED << this->_name << COLOR_DEFAULT;
+		std::cout	<< "ClapTrap " << RED_H << this->_name << RESET_H;
 		status();
 		std::cout	<< " has taken to much damage and has been destroyed!\n";
 	}
@@ -90,17 +90,17 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			this->_hitPoints = _initHitPoints;
 		else
 			this->_hitPoints += amount;
-		std::cout	<< " repaired by " << COLOR_GREEN << amount << COLOR_DEFAULT << " hit points!\n";
+		std::cout	<< " repaired by " << GREEN_H << amount << RESET_H << " hit points!\n";
 	}
 	else if (this->_energyPoints <= 0)
 	{
-		std::cout	<< " tried to repair by " << COLOR_YELLOW << amount << COLOR_DEFAULT << " hit points"
+		std::cout	<< " tried to repair by " << YELLOW_H << amount << RESET_H << " hit points"
 					<< ", but has no energyPoints left to perform repair!\n";
 	}
 	else
 	{
 		std::cout	<< " tried to repair by "
-					<< COLOR_YELLOW << amount << COLOR_DEFAULT << " hit points"
+					<< YELLOW_H << amount << RESET_H << " hit points"
 					<< ", but is already destroyed!\n";
 	}
 }
@@ -112,14 +112,14 @@ std::string	ClapTrap::getName(void)
 
 void		ClapTrap::constructorCall(std::string type)
 {
-	std::cout	<< "ClapTrap " << COLOR_GREEN << this->_name << COLOR_DEFAULT << " was " << type << " with";
+	std::cout	<< "ClapTrap " << GREEN_H << this->_name << RESET_H << " was " << type << " with";
 	status();
 	std::cout << std::endl;
 }
 
 void	ClapTrap::status(void)
 {
-	std::cout	<< " =<[HP (" << COLOR_GREEN << this->_hitPoints << COLOR_DEFAULT << "/" << COLOR_GREEN << _initHitPoints << COLOR_DEFAULT
-				<< ") EP (" << COLOR_YELLOW << this->_energyPoints << COLOR_DEFAULT << "/" << COLOR_YELLOW << _initEnergyPoints << COLOR_DEFAULT
-				<< ") AD (" << COLOR_RED << this->_attackDamage << COLOR_DEFAULT << ")]>=";
+	std::cout	<< " =<[HP (" << GREEN_H << this->_hitPoints << RESET_H << "/" << GREEN_H << _initHitPoints << RESET_H
+				<< ") EP (" << YELLOW_H << this->_energyPoints << RESET_H << "/" << YELLOW_H << _initEnergyPoints << RESET_H
+				<< ") AD (" << RED_H << this->_attackDamage << RESET_H << ")]>=";
 }

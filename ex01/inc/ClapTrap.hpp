@@ -3,19 +3,19 @@
 # define CLAPTRAP_H
 
 # include <iostream>
-# define COLOR_DEFAULT "\x1b[0m"
-# define COLOR_RED "\x1b[31m"
-# define COLOR_GREEN "\x1b[32m"
-# define COLOR_YELLOW "\x1b[33m"
-# define COLOR_BLUE "\x1b[34m"
-# define COLOR_MAGENTA "\x1b[35m"
-# define COLOR_WHITE "\x1b[37m"
 
 # define GREEN_H "\033[0;32m" //constructor called
 # define RESET_H "\033[0m"
 # define RED_H "\033[0;31m" //destructor called
 # define BLUE_H "\033[0;34m" // getrawbit
 # define YELLOW_H "\033[0;33m" //N/A
+# define PURPLE_H "\033[0;35m" //N/A
+// # define GREEN_H "\033[0m" //constructor called
+// # define RESET_H "\033[0m"
+// # define RED_H "\033[0m" //destructor called
+// # define BLUE_H "\033[0m" // getrawbit
+// # define YELLOW_H "\033[0m" //N/A
+// # define PURPLE_H "\033[0m" //N/A
 
 class	ClapTrap
 {
