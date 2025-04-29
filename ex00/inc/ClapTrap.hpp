@@ -22,12 +22,10 @@
 # define REPAIRED_H	"\033[0;33m" //  
 # define ATTACK_H	"\033[0;95m" // purple
 
-typedef std::string string;
-
 class	ClapTrap {
 
 	private:
-		string			_name;
+		std::string		_name;
 		unsigned int	_hitPoints; //life
 		unsigned int	_energyPoints; //mana
 		unsigned int	_attackDamage; //damage
@@ -35,7 +33,7 @@ class	ClapTrap {
 	public:
 		// Constructors
 		ClapTrap(void);
-		ClapTrap(string name);
+		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &toCopy);
 		ClapTrap &operator = (const ClapTrap &toCopy);
 
@@ -43,7 +41,7 @@ class	ClapTrap {
 		~ClapTrap(void);
 
 	// Public methods
-		void	attack(const string& target);
+		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 };

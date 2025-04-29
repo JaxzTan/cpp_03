@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:18:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/29 21:00:24 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/29 21:10:52 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(void) {
  * @brief parameterized constructor
  * @param beside of name all set to default
  */
-ClapTrap::ClapTrap(string name) {
+ClapTrap::ClapTrap(std::string name) {
 	std::cout << GREEN_H <<"ClapTrap set name constructor called" << RESET_H << std::endl;
 	this->_name = name;
 	this->_hitPoints = 10;
@@ -72,7 +72,7 @@ ClapTrap::~ClapTrap(void) {
 	return ;
 }
 
-void	ClapTrap::attack(const string& target) {
+void	ClapTrap::attack(const std::string& target) {
 	if (this->_hitPoints == 0)
 		std::cout << "ClapTrap " << this->_name << ATTACK_H << " is dead, it can't attack" << RESET_H <<std::endl;
 	else if (this->_energyPoints == 0)
