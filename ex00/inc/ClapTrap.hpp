@@ -28,21 +28,19 @@ class	ClapTrap {
 
 	private:
 		string			_name;
-		unsigned int	_hitPoints;
-		unsigned int	_energyPoints;
-		unsigned int	_attackDamage;
+		unsigned int	_hitPoints; //life
+		unsigned int	_energyPoints; //mana
+		unsigned int	_attackDamage; //damage
 
 	public:
-	// Constructors
+		// Constructors
 		ClapTrap(void);
 		ClapTrap(string name);
 		ClapTrap(const ClapTrap &toCopy);
+		ClapTrap &operator = (const ClapTrap &toCopy);
 
 	// Destructor
 		~ClapTrap(void);
-
-	// Overload operator
-		ClapTrap &operator = (const ClapTrap &toCopy);
 
 	// Public methods
 		void	attack(const string& target);
