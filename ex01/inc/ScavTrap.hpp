@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:05:36 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/28 14:37:39 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/30 12:01:04 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 # include "ClapTrap.hpp"
 
+// virtual public here is mean scavtrap inherit from claptrap
+// and claptrap is a virtual base class(parent base class)
 class	ScavTrap : virtual public ClapTrap
 {
 
