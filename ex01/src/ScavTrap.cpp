@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:05:33 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/28 10:28:30 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/30 12:15:32 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hitPoints = _initHitPoints;
 	this->_energyPoints = _initEnergyPoints;
 	this->_attackDamage = _initAttackDamage;
-	std::cout << "ScavTrap " << GREEN_H << name << RESET_H << " was set";
+	std::cout << "ScavTrap " << PURPLE_H << name << RESET_H << " was set";
 	status();
 	std::cout << std::endl;
 }

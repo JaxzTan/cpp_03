@@ -20,6 +20,14 @@
 
 class	ClapTrap
 {
+	
+	private:
+		void		constructorCall(std::string type);
+		void		status(void);
+
+		static unsigned int const _initHitPoints = 10;
+		static unsigned int const _initEnergyPoints = 10;
+		static unsigned int const _initAttackDamage = 0;
 
 	public:
 		ClapTrap(std::string name);
@@ -38,14 +46,6 @@ class	ClapTrap
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;
-
-	private:
-		void		constructorCall(std::string type);
-		void		status(void);
-
-		static unsigned int const _initHitPoints = 10;
-		static unsigned int const _initEnergyPoints = 10;
-		static unsigned int const _initAttackDamage = 0;
 };
 
 #endif

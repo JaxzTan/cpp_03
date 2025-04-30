@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:05:36 by chtan             #+#    #+#             */
-/*   Updated: 2025/04/30 12:01:04 by chtan            ###   ########.fr       */
+/*   Updated: 2025/04/30 12:12:33 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@
 // and claptrap is a virtual base class(parent base class)
 class	ScavTrap : virtual public ClapTrap
 {
-
+	
+	private:
+		void	status(void);
+	
 	public:
-
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const & input);
 		ScavTrap & operator=(ScavTrap const & input);
@@ -30,9 +32,6 @@ class	ScavTrap : virtual public ClapTrap
 
 		void	attack(const std::string & target);
 		void	guardGate(void);
-
-	private:
-		void	status(void);
 
 	protected:
 		static unsigned int const _initHitPoints = 100;
